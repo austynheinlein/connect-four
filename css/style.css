@@ -1,0 +1,33 @@
+body {
+  text-align: center;
+}
+/* text */
+h1  {
+  text-align: center;
+  font-family: Helvetica;
+  font-weight: 600;
+  font-size: 40px;
+  color: grey;
+}
+#four {
+  font-weight: 300;
+  color: #a0b250;
+}
+
+/* grid */
+
+#connect4 {
+  background: white;
+  display: inline-block;
+}
+.column {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: #a0b250;
+  margin: 5px;
+  border-radius: 100%;
+}
+.player1 {
+  background-color: grey;
+}
