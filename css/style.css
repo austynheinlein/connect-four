@@ -16,18 +16,15 @@ h1  {
 
 /* grid */
 
-#connect4 {
+.board {
   background: white;
   display: inline-block;
 }
-.column {
+.col {
   width: 50px;
   height: 50px;
   display: inline-block;
   background-color: #a0b250;
   margin: 5px;
   border-radius: 100%;
-}
-.player1 {
-  background-color: grey;
 }
