@@ -16,7 +16,7 @@ h1  {
 
 /* grid */
 
-.board {
+#connect4 {
   background: white;
   display: inline-block;
 }
@@ -47,12 +47,6 @@ h1  {
   padding: 10px;
   border-radius: 6px;
   cursor: pointer;
-}
-body {
-	background-image: url("lets-play-bridge.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center;
 }
 #modal {
 	background-color: rgba(0,0,0,0.4);

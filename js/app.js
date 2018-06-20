@@ -18,27 +18,42 @@ $openBtn.on('click', openModal);
 $closeBtn.on('click', closeModal);
 
 ////////////////// Create Board //////////////////
-  //jquery object board that's a div with a class "board"
-  const $board = $("<div>").addClass("board")
-  //loop to create 6 rows
-  for (let row = 0; row<6; row++) {
-    //jquery object $row that's a div with a class "row"
-    const $row = $("<div>").addClass("row").attr("data-row", row)
-    //loop to create 6 columns
-    for(let col = 0; col<7; col++) {
-      //jquery object $col that's a div with a class "col"
-      const $col = $("<div>").addClass("col").attr("data-col", col)
-      //append the columns to the rows to make a grid
-      $row.append($col)
-    }//end col loop
-    //append my grid to the board... not sure if necessary?
-    $board.append($row)
-  }//end row loop
-  //append my board to the html body
-  $("body").append($board)
+
+class Game {
+  constructor(selector){
+    this.selector = selector;
+    this.rows = 6;
+    this.cols = 7;
+    // this.player = "#64748c";
+    this.board();
+  }
+  //create the board
+  board(){
+    //jquery object board equals the selector
+    const $board = $(this.selector);
+    console.log($board);
+    console.log(this.selector);
+    //loop to create the 6 rows from above
+    for (let row = 0; row<this.rows; row++) {
+      //jquery object $row that's a div with a class "row"
+      const $row = $("<div>").addClass("row").attr("data-row", row)
+      // console.log($row);
+      //loop to create the 7 columns from above
+      for(let col = 0; col<this.cols; col++) {
+        //jquery object $col that's a div with a class "col"
+        const $col = $("<div>").addClass("col").attr("data-col", col)
+        // console.log($col);
+        //append the columns to the rows to make a grid
+        $row.append($col)
+      }//end col loop
+      //append my grid to the board... not sure if necessary?
+      $board.append($row)
+    }//end row loop
+    //append my board to the html body
+    $("body").append($board)
 
 //////////////// Event Listeners ///////////////
-    //define alternate
+    // define alternate
     let alternate = true;
     //when you click on a specific div, an event takes place
     $(".col").on("click", function(event) {
@@ -57,15 +72,16 @@ $closeBtn.on('click', closeModal);
         alternate = true
       }//end else
     })//end on click function
+  }//end board()
 
 //////////////// Check for Win ///////////////
 //if four divs of the same background color are touching, that color wins.
 //check for this between each click.
 //if true, alert
 
-
-
-
+}//end Class
+const connect4 = new Game("#board")
+// connect4.board()
 })//endpage
 
 
