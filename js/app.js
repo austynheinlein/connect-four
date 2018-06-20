@@ -24,8 +24,8 @@ class Game {
     this.selector = selector;
     this.rows = 6;
     this.cols = 7;
-    // this.player = "#64748c";
     this.board();
+    this.checkWin();
   }
   //create the board
   board(){
@@ -52,11 +52,6 @@ class Game {
     //append my board to the html body
     $("body").append($board)
 
-//////////////// Check for a Winner ///////////////
-  // checkWin(){
-  //
-  // }//end checkWin
-
 //////////////// Event Listeners ///////////////
     // define alternate
     let alternate = true;
@@ -66,27 +61,35 @@ class Game {
 
       //if the variable returns true
       if (alternate === true) {
-        //div turns slate blue
-        // $(event.currentTarget).css("background-color", "#64748c");
-        $(event.currentTarget).css("background-color", "#64748c");
+        const playerBlue = $(event.currentTarget).css("background-color", "#64748c");
         alternate = false;
       } else {
-        //div turns redorange
-        // $(event.currentTarget).css("background-color", "#fc6e4b");
-        $(event.currentTarget).css("background-color", "#fc6e4b");
+        const playerRed = $(event.currentTarget).css("background-color", "#fc6e4b");
         alternate = true
       }//end else
+      checkWin()
     })//end on click function
   }//end board()
+//////////////// Check for a Winner ///////////////
+  checkWin() {
+      fourHorizontal();
+      fourVertical();
 
-//////////////// Check for Win ///////////////
-//if four divs of the same background color are touching, that color wins.
-//check for this between each click.
-//if true, alert
+    //checking for four same colored circles in horizontal line
+    const fourHorizontal(){
 
+    }//end fourHorizontal()
+
+    //checking for four same colored circles in vertical line
+    const fourVertical(){
+
+    }//end fourVertical()
+  }//end checkWin
+
+///////////// end class below //////////////
 }//end Class
 const connect4 = new Game("#board")
-// connect4.board()
+
 })//endpage
 
 
