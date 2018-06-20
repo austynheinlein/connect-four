@@ -31,7 +31,9 @@ h1  {
 }
 
 /* modal */
-
+#greenFont {
+  color: #a0b250;
+}
 #openModal {
   margin: 15px 20px 10px 20px;
   font-family: Helvetica;

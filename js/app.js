@@ -52,6 +52,11 @@ class Game {
     //append my board to the html body
     $("body").append($board)
 
+//////////////// Check for a Winner ///////////////
+  // checkWin(){
+  //
+  // }//end checkWin
+
 //////////////// Event Listeners ///////////////
     // define alternate
     let alternate = true;
