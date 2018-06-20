@@ -53,12 +53,12 @@ class Game {
     $("body").append($board)
 
 //////////////// Event Listeners ///////////////
+//alternatly change color of background on the divs clicked, after each click, check for a win.
     // define alternate
     let alternate = true;
     //when you click on a specific div, an event takes place
     $(".col").on("click", function(event) {
     console.log(event.currentTarget);
-
       //if the variable returns true
       if (alternate === true) {
         const playerBlue = $(event.currentTarget).css("background-color", "#64748c");
@@ -71,6 +71,7 @@ class Game {
     })//end on click function
   }//end board()
 //////////////// Check for a Winner ///////////////
+//when i call checkWin, i want to find out(true/false) if there are four divs of the same bg-color in a row... check horizontally and vertically. if found, the game will end with an alert() saying which color that was true for, and "click restart to play again"
   checkWin() {
       fourHorizontal();
       fourVertical();
@@ -84,7 +85,7 @@ class Game {
     const fourVertical(){
 
     }//end fourVertical()
-  }//end checkWin
+  }//end checkWin()
 
 ///////////// end class below //////////////
 }//end Class
