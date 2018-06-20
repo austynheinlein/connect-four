@@ -1,5 +1,25 @@
 $(() => {
 
+  //Grabbing Elements
+const $openBtn = $('#openModal');
+const $modal = $('#modal');
+const $closeBtn = $('#close');
+
+//Event Handlers
+const openModal = () => {
+  $modal.css('display', 'block');
+}
+
+const closeModal = () => {
+  $modal.css('display', 'none');
+}
+
+//Event Listeners
+$openBtn.on('click', openModal);
+
+$closeBtn.on('click', closeModal);
+
+
 ////////////////// Create Board //////////////////
 //create the divs that will make up my board
   //jquery object board that's a div with a class "board"
@@ -22,28 +42,38 @@ $(() => {
   $("body").append($board)
 
 //////////////// Event Listeners ///////////////
-  //when i click on any divs in the board, the first empty circle of the column clicked, change bg color.
-  //i need the column index of the currentTarget??
+  //when i click on any divs in the board, the first empty circle of the column clicked, change bg color
   //i need to find the first empty circle of that column
   //change that circle bg color
-  //the color needs to alternate between grey and orange with each click
+  //the color needs to alternate colors with each click
   //there needs to be a winCheck after each click
   //winCheck for 4 of same color vertical, horizontal and diagonals
   //if winner, disable click function and alert winner
   //reset game button
 
-
+  //WHY does the below code alternate the colors?????????????????????????????
+    //define alternate
     let alternate = true;
+    //when you click on a specific div, an event takes place
     $(".col").on("click", function(event) {
-    //   console.log(event.currentTarget);
+    console.log(event.currentTarget);
+      //if the variable returns true
       if (alternate === true) {
+        //div turns slate blue
+        // $(event.currentTarget).css("background-color", "#64748c");
         $(event.currentTarget).css("background-color", "#64748c");
         alternate = false;
       } else {
+        //div turns redorange
+        // $(event.currentTarget).css("background-color", "#fc6e4b");
         $(event.currentTarget).css("background-color", "#fc6e4b");
         alternate = true
       }//end else
     })//end on click function
+
+//////////////// Check for Win ///////////////
+
+
 
 
 
