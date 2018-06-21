@@ -29,7 +29,16 @@ h1  {
   border-radius: 100%;
   cursor: pointer;
 }
-
+/* change this class to clickable */
+.col:hover {
+  opacity: .5;
+}
+.Blue {
+  background-color: #64748c;
+}
+.Red {
+  background-color: rgb(252, 110, 75);
+}
 /* modal */
 #greenFont {
   color: #a0b250;
