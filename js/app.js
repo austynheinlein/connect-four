@@ -79,6 +79,7 @@ class Game {
         connect4.boardData[$playerBlue.attr("data-row")][$playerBlue.attr("data-col")] = $playerBlue.attr("play")
         console.log(connect4.boardData);
         checkWinVertical()
+        checkWinHorizontals()
       } else {
         const $playerRed = $(event.currentTarget).addClass("Red").attr("play","red")
         alternate = true
@@ -86,6 +87,7 @@ class Game {
         connect4.boardData[$playerRed.attr("data-row")][$playerRed.attr("data-col")] = $playerRed.attr("play")
         console.log(connect4.boardData);
         checkWinVertical()
+        checkWinHorizontals()
       }//end else
 
     })//end on click function
@@ -253,49 +255,328 @@ const checkWinVertical = () => {
       connect4.boardData[5][4]) {
     alert("winner!")
     console.log("winner!");
+  }else if (
+      connect4.boardData[0][5] !== undefined &&
+      connect4.boardData[0][5] ===
+      connect4.boardData[1][5] &&
+      connect4.boardData[0][5] ===
+      connect4.boardData[2][5] &&
+      connect4.boardData[0][5] ===
+      connect4.boardData[3][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][5] !== undefined &&
+      connect4.boardData[1][5] ===
+      connect4.boardData[2][5] &&
+      connect4.boardData[1][5] ===
+      connect4.boardData[3][5] &&
+      connect4.boardData[1][5] ===
+      connect4.boardData[4][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][5] !== undefined &&
+      connect4.boardData[2][5] ===
+      connect4.boardData[3][5] &&
+      connect4.boardData[2][5] ===
+      connect4.boardData[4][5] &&
+      connect4.boardData[2][5] ===
+      connect4.boardData[5][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][6] !== undefined &&
+      connect4.boardData[0][6] ===
+      connect4.boardData[1][6] &&
+      connect4.boardData[0][6] ===
+      connect4.boardData[2][6] &&
+      connect4.boardData[0][6] ===
+      connect4.boardData[3][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][6] !== undefined &&
+      connect4.boardData[1][6] ===
+      connect4.boardData[2][6] &&
+      connect4.boardData[1][6] ===
+      connect4.boardData[3][6] &&
+      connect4.boardData[1][6] ===
+      connect4.boardData[4][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][6] !== undefined &&
+      connect4.boardData[2][6] ===
+      connect4.boardData[3][6] &&
+      connect4.boardData[2][6] ===
+      connect4.boardData[4][6] &&
+      connect4.boardData[2][6] ===
+      connect4.boardData[5][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else {
+      null;
+    }
+
+  console.log("checking win");
+  console.table(connect4.boardData);
+}//end checkWinVerticals
+
+//******************************************//
+//////////////// HORIZONTALS ////////////////
+//******************************************//
+
+const checkWinHorizontals = () => {
+//checking the array for 4 "blues" in a row
+/////////////column index 0//////////////////////
+  if (
+      connect4.boardData[0][0] !== undefined &&
+      connect4.boardData[0][0] ===
+      connect4.boardData[0][1] &&
+      connect4.boardData[0][0] ===
+      connect4.boardData[0][2] &&
+      connect4.boardData[0][0] ===
+      connect4.boardData[0][3]){
+    alert("winner!");
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][1] !== undefined &&
+      connect4.boardData[0][1] ===
+      connect4.boardData[0][2] &&
+      connect4.boardData[0][1] ===
+      connect4.boardData[0][3] &&
+      connect4.boardData[0][1] ===
+      connect4.boardData[0][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][2] !== undefined &&
+      connect4.boardData[0][2] ===
+      connect4.boardData[0][3] &&
+      connect4.boardData[0][2] ===
+      connect4.boardData[0][4] &&
+      connect4.boardData[0][2] ===
+      connect4.boardData[0][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][3] !== undefined &&
+      connect4.boardData[0][3] ===
+      connect4.boardData[0][4] &&
+      connect4.boardData[0][3] ===
+      connect4.boardData[0][5] &&
+      connect4.boardData[0][3] ===
+      connect4.boardData[0][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][0] !== undefined &&
+      connect4.boardData[1][0] ===
+      connect4.boardData[1][1] &&
+      connect4.boardData[1][0] ===
+      connect4.boardData[1][2] &&
+      connect4.boardData[1][0] ===
+      connect4.boardData[1][3]){
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][1] !== undefined &&
+      connect4.boardData[1][1] ===
+      connect4.boardData[1][2] &&
+      connect4.boardData[1][1] ===
+      connect4.boardData[1][3] &&
+      connect4.boardData[1][1] ===
+      connect4.boardData[1][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][2] !== undefined &&
+      connect4.boardData[1][2] ===
+      connect4.boardData[1][3] &&
+      connect4.boardData[1][2] ===
+      connect4.boardData[1][4] &&
+      connect4.boardData[1][2] ===
+      connect4.boardData[1][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][3] !== undefined &&
+      connect4.boardData[1][3] ===
+      connect4.boardData[1][4] &&
+      connect4.boardData[1][3] ===
+      connect4.boardData[1][5] &&
+      connect4.boardData[1][3] ===
+      connect4.boardData[1][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][0] !== undefined &&
+      connect4.boardData[2][0] ===
+      connect4.boardData[2][1] &&
+      connect4.boardData[2][0] ===
+      connect4.boardData[2][2] &&
+      connect4.boardData[2][0] ===
+      connect4.boardData[2][3]){
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][1] !== undefined &&
+      connect4.boardData[2][1] ===
+      connect4.boardData[2][2] &&
+      connect4.boardData[2][1] ===
+      connect4.boardData[2][3] &&
+      connect4.boardData[2][1] ===
+      connect4.boardData[2][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][2] !== undefined &&
+      connect4.boardData[2][2] ===
+      connect4.boardData[2][3] &&
+      connect4.boardData[2][2] ===
+      connect4.boardData[2][4] &&
+      connect4.boardData[2][2] ===
+      connect4.boardData[2][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][3] !== undefined &&
+      connect4.boardData[2][3] ===
+      connect4.boardData[2][4] &&
+      connect4.boardData[2][3] ===
+      connect4.boardData[2][5] &&
+      connect4.boardData[2][3] ===
+      connect4.boardData[2][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[3][0] !== undefined &&
+      connect4.boardData[3][0] ===
+      connect4.boardData[3][1] &&
+      connect4.boardData[3][0] ===
+      connect4.boardData[3][2] &&
+      connect4.boardData[3][0] ===
+      connect4.boardData[3][3]){
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[3][1] !== undefined &&
+      connect4.boardData[3][1] ===
+      connect4.boardData[3][2] &&
+      connect4.boardData[3][1] ===
+      connect4.boardData[3][3] &&
+      connect4.boardData[3][1] ===
+      connect4.boardData[3][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[3][2] !== undefined &&
+      connect4.boardData[3][2] ===
+      connect4.boardData[3][3] &&
+      connect4.boardData[3][2] ===
+      connect4.boardData[3][4] &&
+      connect4.boardData[3][2] ===
+      connect4.boardData[3][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[3][3] !== undefined &&
+      connect4.boardData[3][3] ===
+      connect4.boardData[3][4] &&
+      connect4.boardData[3][3] ===
+      connect4.boardData[3][5] &&
+      connect4.boardData[3][3] ===
+      connect4.boardData[3][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[4][0] !== undefined &&
+      connect4.boardData[4][0] ===
+      connect4.boardData[4][1] &&
+      connect4.boardData[4][0] ===
+      connect4.boardData[4][2] &&
+      connect4.boardData[4][0] ===
+      connect4.boardData[4][3]){
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[4][1] !== undefined &&
+      connect4.boardData[4][1] ===
+      connect4.boardData[4][2] &&
+      connect4.boardData[4][1] ===
+      connect4.boardData[4][3] &&
+      connect4.boardData[4][1] ===
+      connect4.boardData[4][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[4][2] !== undefined &&
+      connect4.boardData[4][2] ===
+      connect4.boardData[4][3] &&
+      connect4.boardData[4][2] ===
+      connect4.boardData[4][4] &&
+      connect4.boardData[4][2] ===
+      connect4.boardData[4][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[4][3] !== undefined &&
+      connect4.boardData[4][3] ===
+      connect4.boardData[4][4] &&
+      connect4.boardData[4][3] ===
+      connect4.boardData[4][5] &&
+      connect4.boardData[4][3] ===
+      connect4.boardData[4][6]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[5][0] !== undefined &&
+      connect4.boardData[5][0] ===
+      connect4.boardData[5][1] &&
+      connect4.boardData[5][0] ===
+      connect4.boardData[5][2] &&
+      connect4.boardData[5][0] ===
+      connect4.boardData[5][3]){
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[5][1] !== undefined &&
+      connect4.boardData[5][1] ===
+      connect4.boardData[5][2] &&
+      connect4.boardData[5][1] ===
+      connect4.boardData[5][3] &&
+      connect4.boardData[5][1] ===
+      connect4.boardData[5][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[5][2] !== undefined &&
+      connect4.boardData[5][2] ===
+      connect4.boardData[5][3] &&
+      connect4.boardData[5][2] ===
+      connect4.boardData[5][4] &&
+      connect4.boardData[5][2] ===
+      connect4.boardData[5][5]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[5][3] !== undefined &&
+      connect4.boardData[5][3] ===
+      connect4.boardData[5][4] &&
+      connect4.boardData[5][3] ===
+      connect4.boardData[5][5] &&
+      connect4.boardData[5][3] ===
+      connect4.boardData[5][6]) {
+    alert("winner!")
+    console.log("winner!");
 
   }else {
       null;
     }
 
-
-  // }else if (
-  //     connect4.boardData[2][0] ===
-  //     connect4.boardData[3][0] &&
-  //     connect4.boardData[2][0] ===
-  //     connect4.boardData[4][0] &&
-  //     connect4.boardData[2][0] ===
-  //     connect4.boardData[5][0]){
-  //   alert("winner!");
-  // }else if (
-  //     connect4.boardData[0][1] ===
-  //     connect4.boardData[1][1] &&
-  //     connect4.boardData[0][1] ===
-  //     connect4.boardData[2][1] &&
-  //     connect4.boardData[0][1] ===
-  //     connect4.boardData[3][1]){
-  //   alert("winner!");
-  // }else if (
-  //     connect4.boardData[1][1] ===
-  //     connect4.boardData[2][1] &&
-  //     connect4.boardData[1][1] ===
-  //     connect4.boardData[3][1] &&
-  //     connect4.boardData[1][1] ===
-  //     connect4.boardData[4][1]){
-  //  alert("winner!");
-  // }else if (
-  //     connect4.boardData[2][1] ===
-  //     connect4.boardData[3][1] &&
-  //     connect4.boardData[2][1] ===
-  //     connect4.boardData[4][1] &&
-  //     connect4.boardData[2][1] ===
-  //     connect4.boardData[5][1]){
-  //  alert("winner!");
-
-
-
   console.log("checking win");
   console.table(connect4.boardData);
-}//end checkWinVerticals
+}//end checkWinHorizontals
 
 })//endpage
