@@ -75,19 +75,17 @@ class Game {
         //playerBlue is a clicked Blue div
         const $playerBlue = $(event.currentTarget).addClass("Blue").attr("play","blue")
         alternate = false;
-        console.log($playerBlue.attr("data-col"), $playerBlue.attr("play"));
-        console.log($playerBlue.attr("data-row"));
+        console.log($playerBlue.attr("data-row"), $playerBlue.attr("data-col"), $playerBlue.attr("play"));
         connect4.boardData[$playerBlue.attr("data-row")][$playerBlue.attr("data-col")] = $playerBlue.attr("play")
         console.log(connect4.boardData);
-        checkWin()
+        checkWinVertical()
       } else {
         const $playerRed = $(event.currentTarget).addClass("Red").attr("play","red")
         alternate = true
-        console.log($playerRed.attr("data-col"), $playerRed.attr("play"));
-        console.log($playerRed.attr("data-row"));
+        console.log($playerRed.attr("data-row"),$playerRed.attr("data-col"), $playerRed.attr("play"));
         connect4.boardData[$playerRed.attr("data-row")][$playerRed.attr("data-col")] = $playerRed.attr("play")
         console.log(connect4.boardData);
-        checkWin()
+        checkWinVertical()
       }//end else
 
     })//end on click function
@@ -102,24 +100,202 @@ class Game {
 }//end Class
 const connect4 = new Game("#board")
 
-const checkWin = () => {
+const checkWinVertical = () => {
 //checking the array for 4 "blues" in a row
-//$playerBlue is not defined error
-  if (connect4.boardData[0[0]] === $playerBlue.attr("play") &&
-connect4.boardData[1[0]] === $playerBlue.attr("play") &&
-connect4.boardData[2[0]] === $playerBlue.attr("play") &&
-connect4.boardData[3[0]] === $playerBlue.attr("play")){
-    console.log("blue wins!");
-  }else{
-    null;
-  }
-  // if (connect4.boardData[0[0,1,2,3]] === $playerBlue.attr("play")){
-  //   console.log("blue wins!");
-  // }else{
-  //   null;
-  // }
+/////////////column index 0//////////////////////
+  if (
+      connect4.boardData[0][0] !== undefined &&
+      connect4.boardData[0][0] ===
+      connect4.boardData[1][0] &&
+      connect4.boardData[0][0] ===
+      connect4.boardData[2][0] &&
+      connect4.boardData[0][0] ===
+      connect4.boardData[3][0]){
+    alert("winner!");
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][0] !== undefined &&
+      connect4.boardData[1][0] ===
+      connect4.boardData[2][0] &&
+      connect4.boardData[1][0] ===
+      connect4.boardData[3][0] &&
+      connect4.boardData[1][0] ===
+      connect4.boardData[4][0]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][0] !== undefined &&
+      connect4.boardData[2][0] ===
+      connect4.boardData[3][0] &&
+      connect4.boardData[2][0] ===
+      connect4.boardData[4][0] &&
+      connect4.boardData[2][0] ===
+      connect4.boardData[5][0]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][1] !== undefined &&
+      connect4.boardData[0][1] ===
+      connect4.boardData[1][1] &&
+      connect4.boardData[0][1] ===
+      connect4.boardData[2][1] &&
+      connect4.boardData[0][1] ===
+      connect4.boardData[3][1]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][1] !== undefined &&
+      connect4.boardData[1][1] ===
+      connect4.boardData[2][1] &&
+      connect4.boardData[1][1] ===
+      connect4.boardData[3][1] &&
+      connect4.boardData[1][1] ===
+      connect4.boardData[4][1]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][1] !== undefined &&
+      connect4.boardData[2][1] ===
+      connect4.boardData[3][1] &&
+      connect4.boardData[2][1] ===
+      connect4.boardData[4][1] &&
+      connect4.boardData[2][1] ===
+      connect4.boardData[5][1]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][2] !== undefined &&
+      connect4.boardData[0][2] ===
+      connect4.boardData[1][2] &&
+      connect4.boardData[0][2] ===
+      connect4.boardData[2][2] &&
+      connect4.boardData[0][2] ===
+      connect4.boardData[3][2]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][2] !== undefined &&
+      connect4.boardData[1][2] ===
+      connect4.boardData[2][2] &&
+      connect4.boardData[1][2] ===
+      connect4.boardData[3][2] &&
+      connect4.boardData[1][2] ===
+      connect4.boardData[4][2]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][2] !== undefined &&
+      connect4.boardData[2][2] ===
+      connect4.boardData[3][2] &&
+      connect4.boardData[2][2] ===
+      connect4.boardData[4][2] &&
+      connect4.boardData[2][2] ===
+      connect4.boardData[5][2]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][3] !== undefined &&
+      connect4.boardData[0][3] ===
+      connect4.boardData[1][3] &&
+      connect4.boardData[0][3] ===
+      connect4.boardData[2][3] &&
+      connect4.boardData[0][3] ===
+      connect4.boardData[3][3]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][3] !== undefined &&
+      connect4.boardData[1][3] ===
+      connect4.boardData[2][3] &&
+      connect4.boardData[1][3] ===
+      connect4.boardData[3][3] &&
+      connect4.boardData[1][3] ===
+      connect4.boardData[4][3]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][3] !== undefined &&
+      connect4.boardData[2][3] ===
+      connect4.boardData[3][3] &&
+      connect4.boardData[2][3] ===
+      connect4.boardData[4][3] &&
+      connect4.boardData[2][3] ===
+      connect4.boardData[5][3]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[0][4] !== undefined &&
+      connect4.boardData[0][4] ===
+      connect4.boardData[1][4] &&
+      connect4.boardData[0][4] ===
+      connect4.boardData[2][4] &&
+      connect4.boardData[0][4] ===
+      connect4.boardData[3][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[1][4] !== undefined &&
+      connect4.boardData[1][4] ===
+      connect4.boardData[2][4] &&
+      connect4.boardData[1][4] ===
+      connect4.boardData[3][4] &&
+      connect4.boardData[1][4] ===
+      connect4.boardData[4][4]) {
+    alert("winner!")
+    console.log("winner!");
+  }else if (
+      connect4.boardData[2][4] !== undefined &&
+      connect4.boardData[2][4] ===
+      connect4.boardData[3][4] &&
+      connect4.boardData[2][4] ===
+      connect4.boardData[4][4] &&
+      connect4.boardData[2][4] ===
+      connect4.boardData[5][4]) {
+    alert("winner!")
+    console.log("winner!");
+
+  }else {
+      null;
+    }
+
+
+  // }else if (
+  //     connect4.boardData[2][0] ===
+  //     connect4.boardData[3][0] &&
+  //     connect4.boardData[2][0] ===
+  //     connect4.boardData[4][0] &&
+  //     connect4.boardData[2][0] ===
+  //     connect4.boardData[5][0]){
+  //   alert("winner!");
+  // }else if (
+  //     connect4.boardData[0][1] ===
+  //     connect4.boardData[1][1] &&
+  //     connect4.boardData[0][1] ===
+  //     connect4.boardData[2][1] &&
+  //     connect4.boardData[0][1] ===
+  //     connect4.boardData[3][1]){
+  //   alert("winner!");
+  // }else if (
+  //     connect4.boardData[1][1] ===
+  //     connect4.boardData[2][1] &&
+  //     connect4.boardData[1][1] ===
+  //     connect4.boardData[3][1] &&
+  //     connect4.boardData[1][1] ===
+  //     connect4.boardData[4][1]){
+  //  alert("winner!");
+  // }else if (
+  //     connect4.boardData[2][1] ===
+  //     connect4.boardData[3][1] &&
+  //     connect4.boardData[2][1] ===
+  //     connect4.boardData[4][1] &&
+  //     connect4.boardData[2][1] ===
+  //     connect4.boardData[5][1]){
+  //  alert("winner!");
+
+
+
   console.log("checking win");
   console.table(connect4.boardData);
-}
+}//end checkWinVerticals
 
 })//endpage
