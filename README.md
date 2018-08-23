@@ -1,5 +1,5 @@
-# austynheinlein.github.io
-github page
+# Connect Four
+
 Title: CONNECT FOUR
 https://austynheinlein.github.io/
 This game is developed for two players. 
